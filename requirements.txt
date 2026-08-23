@@ -1,0 +1,13 @@
+fastapi>=0.100.0
+uvicorn>=0.22.0
+boto3>=1.28.0
+zstandard>=0.21.0
+cryptography>=41.0.0
+blake3>=0.3.3
+fastcdc>=1.4.1
+bsdiff4>=1.2.5
+hvac>=1.1.0
+prometheus-client>=0.17.0
+requests>=2.31.0
+pyo3>=0.20.0
+ray>=2.6.0
