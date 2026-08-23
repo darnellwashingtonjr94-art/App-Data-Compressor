@@ -1,0 +1,5 @@
+Offset       Field             Length       Description
+0x00         dek_length        2 bytes      Big-endian unsigned short defining size of encrypted DEK
+0x02         encrypted_dek     Variable     The KMS-wrapped DEK blob (typically ~100-200 bytes)
+0x02 + N     nonce             12 bytes     AES-256-GCM initialization vector
+0x0E + N     payload           Remaining    Zstandard-compressed, AES-GCM encrypted data block
