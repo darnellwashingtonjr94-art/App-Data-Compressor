@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  adc-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+    command: ["uvicorn", "src.api_gateway:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
