@@ -9,5 +9,4 @@ bsdiff4>=1.2.5
 hvac>=1.1.0
 prometheus-client>=0.17.0
 requests>=2.31.0
-pyo3>=0.20.0
 ray>=2.6.0
