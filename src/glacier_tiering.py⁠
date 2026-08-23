@@ -1,0 +1,35 @@
+import boto3
+import json
+
+class ColdStorageManager:
+    def __init__(self, bucket_name: str):
+        self.s3 = boto3.client('s3')
+        self.bucket = bucket_name
+
+    def generate_tiering_manifest(self, object_key: str, compression_ratio: float):
+        """
+        Generates tiering manifests to trigger cloud provider lifecycle rules, 
+        automatically routing high-compression archives into Glacier Deep Archive.
+        """
+        tags = {
+            'TagSet': [
+                {'Key': 'ArchiveTier', 'Value': 'DeepArchive' if compression_ratio > 0.8 else 'Standard'},
+                {'Key': 'AutoTagging', 'Value': 'Enabled'}
+            ]
+        }
+        
+        self.s3.put_object_tagging(
+            Bucket=self.bucket,
+            Key=object_key,
+            Tagging=tags
+        )
+        
+        # Save manifest alongside container
+        manifest = {
+            "object": object_key,
+            "compression_ratio": compression_ratio,
+            "destination_tier": "S3 Glacier Deep Archive" if compression_ratio > 0.8 else "S3 Standard"
+        }
+        
+        with open(f"{object_key}.manifest.json", "w") as f:
+            json.dump(manifest, f, indent=4)
