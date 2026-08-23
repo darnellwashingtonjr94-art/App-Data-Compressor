@@ -1,0 +1,25 @@
+import bsdiff4
+import os
+
+class DeltaDiffEngine:
+    def __init__(self, historical_archive_path: str):
+        self.base_archive = historical_archive_path
+
+    def generate_diff(self, new_file_path: str, patch_output_path: str):
+        """Calculates byte-level diffs against historical archives to save space."""
+        bsdiff4.file_diff(self.base_archive, new_file_path, patch_output_path)
+        
+        base_size = os.path.getsize(self.base_archive)
+        new_size = os.path.getsize(new_file_path)
+        patch_size = os.path.getsize(patch_output_path)
+        
+        return {
+            "base_size": base_size,
+            "new_size": new_size,
+            "patch_size": patch_size,
+            "reduction_ratio": round(1 - (patch_size / new_size), 4)
+        }
+
+    def apply_diff(self, patch_file_path: str, restored_output_path: str):
+        """Reconstructs the new file using the base archive and the delta patch."""
+        bsdiff4.file_patch(self.base_archive, restored_output_path, patch_file_path)
