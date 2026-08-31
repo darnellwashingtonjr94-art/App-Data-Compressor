@@ -1,3 +1,34 @@
+## 💻 Tech Stack
+
+**Core Programming Languages, Core Systems**
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+
+**Platform Support & Hardware Architecture**
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+**Low-Level Infrastructure & Performance**
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+![Zstandard](https://img.shields.io/badge/Zstandard-1081c2?style=for-the-badge)
+
+**Cybersecurity & Offensive Auditing**
+![HashiCorp Vault](https://img.shields.io/badge/Vault-000000?style=for-the-badge&logo=hashicorpvault&logoColor=white)
+![AES-256](https://img.shields.io/badge/Encryption-AES--256-4A154B?style=for-the-badge)
+![Blake3](https://img.shields.io/badge/Hashing-Blake3-FF4000?style=for-the-badge)
+
+**DevOps & Build Tools**
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
+**Artificial Intelligence & Quantum**
+![Ray](https://img.shields.io/badge/Ray-028EE1?style=for-the-badge&logo=ray&logoColor=white)
+
+**Cloud Providers**
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-web-services&logoColor=white)
+![Amazon S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white)
+
 # App-Data-Compressor
 App-Data-Compressor is a high-performance Python engine utilizing AWS KMS envelope encryption, Content-Defined Chunking, and Zstandard compression. It ensures zero plaintext storage by wrapping unique data encryption keys locally, implements granular CloudTrail auditing, and delivers instant cryptographic erasure for multi-gigabyte streams.
 
