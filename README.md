@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="1788156418404.png" alt="App-Data-Compressor Logo" width="600">
+</p>
+
 ## 💻 Tech Stack
 
 **Core Programming Languages, Core Systems**
